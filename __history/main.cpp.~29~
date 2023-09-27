@@ -1,0 +1,30 @@
+#include <iostream>
+
+int main()
+{
+	float val1,val2,résultat;
+	char operateur,plus,minus,multiplication,divide;
+	plus = +;
+	minus = -;
+	multiplication = *;
+	divide = /;
+
+	std::cout << "Saisir calcul : ";
+	std::cin >> val1 >> operateur >> val2;
+	if (operateur == plus) {
+		résultat=val1+val2;}
+	else if (operateur == minus){
+		résultat=val1-val2;}
+		else if (operateur == multiplication){
+			résultat=val1*val2;}
+			else if (operateur == divide){
+				résultat=val1/val2;}
+				else{
+				std::cout << "Erreur";}
+	résultat=val1+val2;
+
+	std::cout << "Somme : "<< résultat << std::endl;
+	system("PAUSE");
+
+	return 0;
+}
