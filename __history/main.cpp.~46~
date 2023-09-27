@@ -28,7 +28,7 @@ int main()
 		std::cout << "Division : "<< resultat << std::endl;
 	}
 		else {std::cout << "Erreur" << std::endl;
-		system("PAUSE");
+        system("PAUSE")
 		return -1;}
 
 

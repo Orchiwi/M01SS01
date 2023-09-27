@@ -24,12 +24,9 @@ int main()
 		std::cout << "Multiplication : "<< resultat << std::endl;
 	}
 		else if(operateur == '/'){
-		resultat=val1 / val2;
+		resultat=val1 - val2;
 		std::cout << "Division : "<< resultat << std::endl;
 	}
-		else {std::cout << "Erreur" << std::endl;
-		system("PAUSE");
-		return -1;}
 
 
 	system("PAUSE");
