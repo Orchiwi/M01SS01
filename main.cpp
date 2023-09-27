@@ -31,7 +31,7 @@ int main()
 		system("PAUSE");
 		return -1;}
 
-
+    std::cout << "FIN DU PROGRAMME CALCULATRICE SANS ERREUR" << std::endl
 	system("PAUSE");
 
 	return 0;
