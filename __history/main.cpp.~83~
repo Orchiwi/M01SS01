@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
-using namespace std::;
+#include <ctime> (time.h)
+using namespace std;
 int main()
 {
 	float val1,val2,resultat;
@@ -35,9 +36,13 @@ int main()
 
 	cout << "FIN DU PROGRAMME CALCULATRICE SANS ERREUR" << endl;
 
+
+
 	ofstream FichierLog;
 	FichierLog.open("journal log", ios_base::app);
-	FichierLog << val1 << operateur << val2 << resultat << "\n";
+	time_t t = time(0);
+	tm* now = localtime(&t);
+	FichierLog << now->tm_year << "/" << (now ->tm_mon + 1) << "/" << (now->tm_mday + 1900) << ": " << val1 << operateur << val2 << " = " << resultat << "\n";
 	FichierLog.close ();
 
 	system("PAUSE");

@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <fstream>
 #include <ctime> (time.h)
 using namespace std;
@@ -42,7 +42,7 @@ int main()
 	FichierLog.open("journal log", ios_base::app);
 	time_t t = time(0);
 	tm* now = localtime(&t);
-	FichierLog << now->tm_mday << "/" << (now ->tm_mon + 1) << "/" << (now->tm_year + 1900) << "[" << now->tm_hour << ":" << now->tm_min << ":" << now->tm_sec <<  "]" << ": " << val1 << " " << operateur << " " << val2 << " = " << resultat << "\n";
+	FichierLog << now->tm_mday << "/" << (now ->tm_mon + 1) << "/" << (now->tm_year + 1900) << "[" << now->tm_hour << now->tm_min << now->tm_sec   "]" ": " << val1 << operateur << val2 << " = " << resultat << "\n";
 	FichierLog.close ();
 
 	system("PAUSE");
