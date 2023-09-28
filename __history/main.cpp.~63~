@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 
 int main()
 {
@@ -29,8 +30,15 @@ int main()
 	}
 		else {std::cout << "Erreur" << std::endl;
 		system("PAUSE");
-		return -1;}
+		return -1;
+	}
 
+	std::cout << "FIN DU PROGRAMME CALCULATRICE SANS ERREUR" << std::endl;
+
+	ofstream FichierLog;
+	FichierLog.open("journal log",ios_base::app);
+	FichierLog << val1 << operateur << val2 << resultat"\n";
+	FichierLog.close ();
 
 	system("PAUSE");
 
