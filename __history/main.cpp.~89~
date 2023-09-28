@@ -41,10 +41,8 @@ int main()
 	ofstream FichierLog;
 	FichierLog.open("journal log", ios_base::app);
 	time_t t = time(0);
-	cout << "Horodatage : " << t << endl;
 	tm* now = localtime(&t);
-	cout  endl;
-	FichierLog << now->tm_mday << "/" << (now ->tm_mon + 1) << "/" << (now->tm_year + 1900) << ": " << val1 << operateur << val2 << " : " << resultat << "\n";
+	FichierLog << now->tm_mday << "/" << (now ->tm_mon + 1) << "/" << (now->tm_year + 1900) << "[" << now->tm_hour << ":" << now->tm_min << ":" << now->tm_sec <<  "]" << ": " << val1 << " " << operateur << " " << val2 << " = " << resultat << "\n";
 	FichierLog.close ();
 
 	system("PAUSE");
