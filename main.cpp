@@ -1,11 +1,17 @@
 #include <iostream>
 #include <fstream>
 #include <ctime> (time.h)
+#include <sstream>
+#include "IRClientUDP.h"
+#include "IRLigne.h"
+
+
 using namespace std;
 int main()
 {
 	float val1,val2,resultat;
 	char operateur;
+	string msg;
 
 	cout << "Saisir calcul : ";
 	cin >> val1 >> operateur >> val2;
@@ -38,6 +44,7 @@ int main()
 
 
 
+
 	ofstream FichierLog;
 	FichierLog.open("journal log", ios_base::app);
 	time_t t = time(0);
@@ -45,7 +52,25 @@ int main()
 	FichierLog << now->tm_mday << "/" << (now ->tm_mon + 1) << "/" << (now->tm_year + 1900) << "[" << now->tm_hour << ":" << now->tm_min << ":" << now->tm_sec <<  "]" << ": " << val1 << " " << operateur << " " << val2 << " = " << resultat << "\n";
 	FichierLog.close ();
 
+
+
+	stringstream ss;
+	ss << val1 << " " << operateur << " " << val2 << " = " << resultat;
+	string operation = ss.str();
+
+	IRLigne ligne;
+	ligne.ModifierMessage(operation);
+
+
+	IRClientUDP client;
+	client.OuvrirLaSocketDeCommunication("172.20.21.157",4014);
+	client.EnvoyerUnMessage(ligne.Trame());
+	client.FermerLaSocket();
+
+
+
+
 	system("PAUSE");
 
 	return 0;
-}                                            /* test */
+		   }

@@ -56,8 +56,8 @@
         <ProjectType>CppConsoleApplication</ProjectType>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
         <Multithreaded>true</Multithreaded>
-        <IncludePath>M01SS01\;$(IncludePath)</IncludePath>
-        <ILINK_LibraryPath>M01SS01\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <IncludePath>R:\M01\;M01SS01\;$(IncludePath)</IncludePath>
+        <ILINK_LibraryPath>R:\M01\;M01SS01\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <_TCHARMapping>char</_TCHARMapping>
         <SanitizedProjectName>Project1</SanitizedProjectName>
     </PropertyGroup>
@@ -111,6 +111,20 @@
         <BCC_UseClassicCompiler>false</BCC_UseClassicCompiler>
     </PropertyGroup>
     <ItemGroup>
+        <CppCompile Include="IRClientUDP.cpp">
+            <Suffix>_0</Suffix>
+            <BuildOrder>6</BuildOrder>
+        </CppCompile>
+        <None Include="IRClientUDP.h">
+            <BuildOrder>7</BuildOrder>
+        </None>
+        <CppCompile Include="IRLigne.cpp">
+            <Suffix>_0</Suffix>
+            <BuildOrder>8</BuildOrder>
+        </CppCompile>
+        <None Include="IRLigne.h">
+            <BuildOrder>9</BuildOrder>
+        </None>
         <CppCompile Include="main.cpp">
             <BuildOrder>1</BuildOrder>
         </CppCompile>
@@ -118,6 +132,18 @@
             <BuildOrder>0</BuildOrder>
             <PCH>true</PCH>
         </PCHCompile>
+        <CppCompile Include="R:\M01\IRClientUDP.cpp">
+            <BuildOrder>2</BuildOrder>
+        </CppCompile>
+        <None Include="R:\M01\IRClientUDP.h">
+            <BuildOrder>3</BuildOrder>
+        </None>
+        <CppCompile Include="R:\M01\IRLigne.cpp">
+            <BuildOrder>4</BuildOrder>
+        </CppCompile>
+        <None Include="R:\M01\IRLigne.h">
+            <BuildOrder>5</BuildOrder>
+        </None>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
