@@ -1,15 +1,26 @@
 #include <iostream>
 #include <fstream>
 #include <ctime> (time.h)
+#include <sstream>
 #include "IRClientUDP.h"
 #include "IRLigne.h"
-#include <sstream>
+
+
 using namespace std;
+void chiffrement(string message, string & messageChiffre)
+{
+	string cle = "CyberSecurite";
+	for(int i = 0 ; i<message.length() ; i++)
+	{
+		messageChiffre[i] = message [i] ^ cle[i%cle.length()];
+    }
+
+}
 int main()
 {
 	float val1,val2,resultat;
 	char operateur;
-    string msg;
+	string msg;
 
 	cout << "Saisir calcul : ";
 	cin >> val1 >> operateur >> val2;
@@ -50,19 +61,28 @@ int main()
 	FichierLog << now->tm_mday << "/" << (now ->tm_mon + 1) << "/" << (now->tm_year + 1900) << "[" << now->tm_hour << ":" << now->tm_min << ":" << now->tm_sec <<  "]" << ": " << val1 << " " << operateur << " " << val2 << " = " << resultat << "\n";
 	FichierLog.close ();
 
-/**/
+
 
 	stringstream ss;
 	ss << val1 << " " << operateur << " " << val2 << " = " << resultat;
 	string operation = ss.str();
 
+	IRLigne ligne;
+	ligne.ModifierMessage(operation);
+
+	string ligne.Trame = trame;
+	chiffrement(trame, trameChiffree);
+	cout << "TRAME CHIFFREE : " << trameChiffree << endl;
+
 	IRClientUDP client;
 	client.OuvrirLaSocketDeCommunication("172.20.21.157",4014);
-	client.EnvoyerUnMessage(msg);
+	client.EnvoyerUnMessage(ligne.Trame());
 	client.FermerLaSocket();
 
-/**/
+
+
+
 	system("PAUSE");
 
 	return 0;
-}                                            /* test */
+		   }

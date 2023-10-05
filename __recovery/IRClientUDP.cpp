@@ -89,7 +89,7 @@ int IRClientUDP::RecevoirUnMessage(std::string & message)
     char msg[1500];
     struct sockaddr_in from;
     unsigned int length = sizeof(from); // doit être initialisé
-	int nbCaracteresRecus = recvfrom(m_socketClientUDP, msg, 1500, 0, (struct sockaddr *)&from, (int*)(&length));
+	int nbCaracteresRecus = recvfrom(m_socketClientUDP, msg, 1500, 0, (struct sockaddr *)&from, &length);
     if(nbCaracteresRecus > 1)
     {
         message = std::string(msg, nbCaracteresRecus);
@@ -103,10 +103,10 @@ int IRClientUDP::RecevoirDesOctets(char * tableau, int tailleMax)
 {
     struct sockaddr_in from;
     unsigned int length = sizeof(from);
-	int nbCaracteresRecus = recvfrom(m_socketClientUDP, tableau, tailleMax, 0, (struct sockaddr *)&from, (int*)(&length));
+	int nbCaracteresRecus = recvfrom(m_socketClientUDP, tableau, tailleMax, 0, (struct sockaddr *)&from, &length);
     if(nbCaracteresRecus > 1)
     {
         return nbCaracteresRecus;
-	}
+    }
     return -1;
 }

@@ -7,6 +7,15 @@
 
 
 using namespace std;
+void chiffrement(string message, string & messageChiffre)
+{
+	string cle = "CyberSecurite";
+	for(int i = 0 ; i<message.length() ; i++)
+	{
+		messageChiffre[i] = message [i] ^ cle[i%cle.length()];
+    }
+
+}
 int main()
 {
 	float val1,val2,resultat;
@@ -58,10 +67,19 @@ int main()
 	ss << val1 << " " << operateur << " " << val2 << " = " << resultat;
 	string operation = ss.str();
 
+	IRLigne ligne;
+	ligne.ModifierMessage(operation);
+
+	string ligne.Trame = trame;
+	chiffrement(trame, trameChiffree);
+	cout << "TRAME CHIFFREE : " << trameChiffree << endl;
+
 	IRClientUDP client;
 	client.OuvrirLaSocketDeCommunication("172.20.21.157",4014);
-	client.EnvoyerUnMessage(msg);
+	client.EnvoyerUnMessage(ligne.Trame());
 	client.FermerLaSocket();
+
+
 
 
 	system("PAUSE");
