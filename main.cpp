@@ -70,13 +70,14 @@ int main()
 
 	IRLigne ligne;
 	ligne.ModifierMessage(operation);
+	string trame = ligne.Trame();
 
-	string trameChiffree;
-	chiffrement(ligne.Trame(), trameChiffree);
+	string trameChiffree = trame;
+	chiffrement(trame, trameChiffree);
 	cout << "TRAME CHIFFREE : " << trameChiffree << endl;
 
 	IRClientUDP client;
-	client.OuvrirLaSocketDeCommunication("172.20.21.157",4014);
+	client.OuvrirLaSocketDeCommunication("172.20.21.157",4004);
 	client.EnvoyerUnMessage(trameChiffree);
 	client.FermerLaSocket();
 

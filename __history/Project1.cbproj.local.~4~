@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/09/26 10:27:23.000.584,=C:\Users\amorlet\Documents\Embarcadero\Studio\Projets\Project1PCH1.h</Transaction>
+    <Transaction>2023/09/26 10:27:23.000.584,=C:\Users\amorlet\Documents\Embarcadero\Studio\Projets\File1.cpp</Transaction>
+    <Transaction>2023/09/26 10:28:17.000.772,C:\Users\amorlet\Documents\Embarcadero\Studio\Projets\M01SS01\main.cpp=C:\Users\amorlet\Documents\Embarcadero\Studio\Projets\File1.cpp</Transaction>
+    <Transaction>2023/09/26 11:12:35.000.399,C:\Users\amorlet\Documents\Embarcadero\Studio\Projets\M01SS01\Project1.cbproj=C:\Users\amorlet\Documents\Embarcadero\Studio\Projets\Project1.cbproj</Transaction>
+    <Transaction>2023/09/26 11:12:35.000.399,C:\Users\amorlet\Documents\Embarcadero\Studio\Projets\M01SS01\Project1PCH1.h=C:\Users\amorlet\Documents\Embarcadero\Studio\Projets\Project1PCH1.h</Transaction>
+    <Transaction>2023/10/05 08:51:24.000.604,=R:\M01\IRLigne.h</Transaction>
+    <Transaction>2023/10/05 08:51:24.000.491,=R:\M01\IRLigne.cpp</Transaction>
+    <Transaction>2023/10/05 08:51:24.000.262,=R:\M01\IRClientUDP.cpp</Transaction>
+    <Transaction>2023/10/05 08:51:24.000.375,=R:\M01\IRClientUDP.h</Transaction>
+    <Transaction>2023/10/05 09:16:21.000.753,=C:\Users\amorlet\Documents\Embarcadero\Studio\Projets\M01SS01\IRClientUDP.h</Transaction>
+    <Transaction>2023/10/05 09:16:21.000.904,=C:\Users\amorlet\Documents\Embarcadero\Studio\Projets\M01SS01\IRLigne.h</Transaction>
+    <Transaction>2023/10/05 09:16:21.000.696,=C:\Users\amorlet\Documents\Embarcadero\Studio\Projets\M01SS01\IRClientUDP.cpp</Transaction>
+    <Transaction>2023/10/05 09:16:21.000.836,=C:\Users\amorlet\Documents\Embarcadero\Studio\Projets\M01SS01\IRLigne.cpp</Transaction>
+    <Transaction>2023/10/05 10:53:30.407,R:\M01\IRClientUDP.cpp=</Transaction>
+    <Transaction>2023/10/05 10:53:42.665,R:\M01\IRClientUDP.h=</Transaction>
+    <Transaction>2023/10/05 10:53:54.444,R:\M01\IRLigne.cpp=</Transaction>
+    <Transaction>2023/10/05 10:54:00.405,R:\M01\IRLigne.h=</Transaction>
+  </Transactions>
+</BorlandProject>

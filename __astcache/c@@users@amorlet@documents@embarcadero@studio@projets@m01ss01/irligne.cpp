@@ -1,4 +1,4 @@
-#include "IRLigne.h"
+﻿#include "IRLigne.h"
 #include <stdio.h>
 #include <iostream>
 #include <iomanip>

@@ -1,6 +1,6 @@
 #include <iostream>
 #include <fstream>
-#include <ctime> (time.h)
+#include <ctime>
 #include <sstream>
 #include "IRClientUDP.h"
 #include "IRLigne.h"
@@ -9,7 +9,7 @@
 using namespace std;
 void chiffrement(string message, string & messageChiffre)
 {
-	string cle = "CyberSecurite";
+	string cle = "CyberSecurité";
 	for(int i = 0 ; i<message.length() ; i++)
 	{
 		messageChiffre[i] = message [i] ^ cle[i%cle.length()];
@@ -21,7 +21,7 @@ int main()
 	float val1,val2,resultat;
 	char operateur;
 	string msg;
-    string trame
+	/*string trame;*/
 
 	cout << "Saisir calcul : ";
 	cin >> val1 >> operateur >> val2;
@@ -70,14 +70,15 @@ int main()
 
 	IRLigne ligne;
 	ligne.ModifierMessage(operation);
+	string trame = ligne.Trame();
 
 	string trameChiffree = trame;
 	chiffrement(trame, trameChiffree);
 	cout << "TRAME CHIFFREE : " << trameChiffree << endl;
 
 	IRClientUDP client;
-	client.OuvrirLaSocketDeCommunication("172.20.21.157",4014);
-	client.EnvoyerUnMessage(ligne.Trame());
+	client.OuvrirLaSocketDeCommunication("172.20.21.157",4004);
+	client.EnvoyerUnMessage(trameChiffree);
 	client.FermerLaSocket();
 
 
