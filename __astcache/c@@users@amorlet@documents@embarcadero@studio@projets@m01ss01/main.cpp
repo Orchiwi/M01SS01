@@ -1,6 +1,6 @@
 ﻿#include <iostream>
 #include <fstream>
-#include <ctime> (time.h)
+#include <ctime>
 #include <sstream>
 #include "IRClientUDP.h"
 #include "IRLigne.h"
@@ -71,13 +71,13 @@ int main()
 	IRLigne ligne;
 	ligne.ModifierMessage(operation);
 
-	string trameChiffree = ss.str();
-	chiffrement(ss.str(), trameChiffree);
+	string trameChiffree;
+	chiffrement(ligne.Trame(), trameChiffree);
 	cout << "TRAME CHIFFREE : " << trameChiffree << endl;
 
 	IRClientUDP client;
 	client.OuvrirLaSocketDeCommunication("172.20.21.157",4014);
-	client.EnvoyerUnMessage(ligne.trameChiffree());
+	client.EnvoyerUnMessage(trameChiffree);
 	client.FermerLaSocket();
 
 
