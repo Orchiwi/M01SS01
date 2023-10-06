@@ -21,7 +21,6 @@ int main()
 	float val1,val2,resultat;
 	char operateur;
 	string msg;
-	/*string trame;*/
 
 	cout << "Saisir calcul : ";
 	cin >> val1 >> operateur >> val2;
@@ -71,13 +70,13 @@ int main()
 	IRLigne ligne;
 	ligne.ModifierMessage(operation);
 
-	string trameChiffree = ss.str();
-	chiffrement(ss.str(), trameChiffree);
+	string ligne.Trame = trame;
+	chiffrement(trame, trameChiffree);
 	cout << "TRAME CHIFFREE : " << trameChiffree << endl;
 
 	IRClientUDP client;
 	client.OuvrirLaSocketDeCommunication("172.20.21.157",4014);
-	client.EnvoyerUnMessage(ligne.trameChiffree());
+	client.EnvoyerUnMessage(ligne.Trame());
 	client.FermerLaSocket();
 
 
